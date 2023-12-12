@@ -83,7 +83,7 @@ class Controller
         } else {
             $realurl = $view->path($url);
         }
-        header('Location: '.$url);
+        header('Location: '.$realurl);
         die();
     }
 

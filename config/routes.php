@@ -1,8 +1,8 @@
 <?php
-
-$routes = array(
-    array('home','default','index')
-);
+//<pre><code>array('nom de la page','Nom du controller','nom de la methode',tableau d'arguments)), </code></pre>//
+$routes = [
+    ['home', 'default', 'index']
+];
 
 
 

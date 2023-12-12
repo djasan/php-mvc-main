@@ -52,7 +52,7 @@ table {
     -moz-box-sizing:border-box;
     box-sizing:border-box;
     -webkit-font-smoothing:antialiased;
-    font-smoothing:antialiased;
+   
     text-rendering:optimizeLegibility;
 }
 
@@ -62,4 +62,3 @@ body { font:400 16px/1.3 Verdana, sans-serif;color:#464646; background-color: #f
 
 .clear:before,.clear:after { content:' '; display:table; }
 .clear:after { clear:both; }
-.clear { *zoom:1;}

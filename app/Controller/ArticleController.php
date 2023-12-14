@@ -38,4 +38,12 @@ class ArticleController extends Controller
             'user' => $user
         ]);
     }
+    public function delete($id)
+    {
+       
+       // $this->dbug ($id);
+
+       PostModel::delete($id);
+       $this-> redirect('article');
+    }
 }

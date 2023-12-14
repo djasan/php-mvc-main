@@ -10,7 +10,7 @@
     font-size: 16px;
     line-height: 1.5;
     color: #131212;
-    background: #95b0ab;
+    background: #0b0b0b;
   }
   
   nav {
@@ -37,7 +37,7 @@
   }
   
   nav a:hover {
-    text-decoration: underline;
+    text-decoration-color: #0a0a0a;
   }
   
   /* 
@@ -50,18 +50,20 @@
   */
   
   .cards {
+  
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
   
   .card {
+   
     flex: 0 0 calc(33.3333% - 20px);
     border: 1px solid hsl(0, 5%, 15%);
-    border-radius: 5px;
+    border-radius: 30px;
     margin: 10px;
     padding: 15px;
-    background-color: #8dcbd3;
+    background-color: rgba(250, 235, 215, 0.975);
   }
   
   .card h2 {
@@ -75,3 +77,21 @@
   li {
     list-style: none;
   }
+  .card a {
+    color: rgb(17, 19, 19);
+  }
+
+  .btn {
+    border-radius: 12px;
+    background-color: #f06d0f;
+    color: #0a0a0a;
+    padding: 5px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e11422;
+}
+

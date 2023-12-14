@@ -44,6 +44,6 @@ class ArticleController extends Controller
        // $this->dbug ($id);
 
        PostModel::delete($id);
-       $this-> redirect('article');
+       $this-> redirect('articles');
     }
 }

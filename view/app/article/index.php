@@ -10,6 +10,7 @@
             <p class="author"><?= $user->findById($article->author, 'id')->firstname ?></p>
             <p class="author"><?= $user->findById($article->author, 'id')->lastname ?></p>
             <p class="date">Crée le : <?= $article->createdAt ?></p>
+            <p class="date">Modifiée le : <?= $article->modifiedAt ?></p>
         </li>
 
     <?php endforeach; ?>

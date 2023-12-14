@@ -17,6 +17,7 @@
               <li><a href="<?= $view->path('about'); ?>">About</a></li>
               <li><a href="<?= $view->path('location'); ?>">location</a></li>
               <li><a href="<?= $view->path('articles'); ?>">articles</a></li>
+       
           </ul>
       </nav>
     </header>

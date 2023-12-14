@@ -1,13 +1,16 @@
+<section class="cards">
+    <?php foreach ($article as $article) : ?>
 
+        <li class="card">
+        <a href="<?= $view->path('article', [$article->id]); ?>">
+                <h2 class="title"><?= $article->title ?></h2>
+            </a>
+            <h2><?= $article->content?></h2>
 
-<h1 style ="text-align: center; font-size:33px; margin-top:100px;" ><?= $titreBlog?></h1>
+            <p class="author"><?= $user->findById($article->author, 'id')->firstname ?></p>
+            <p class="author"><?= $user->findById($article->author, 'id')->lastname ?></p>
+            <p class="date">Crée le : <?= $article->createdAt ?></p>
+        </li>
 
-<?php foreach($article as $article):?>
-    <li><h2><?= $article->title?></h2>
-    <p><?= $article->content?></p>
-    </li>
-    <?php endforeach;?>
-    
-
-
-
+    <?php endforeach; ?>
+</section>

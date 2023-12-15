@@ -98,4 +98,22 @@
 .btn:hover {
     background-color: #e11422;
 }
+/* Ajoutez ces styles dans votre feuille de style CSS */
 
+.envoyer-btn{
+
+  margin-top: 8px;
+  background-color: #4CAF50;
+  color: rgb(215, 230, 233);
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 10px; /* Ajout de la taille de police souhaitée */
+  transition: background-color 0.3s ease;
+}
+#submitted:hover {
+  background-color: #7f0812; /* Nouvelle couleur de fond au survol */
+  font-size: 20px;
+  margin:10px ;
+}

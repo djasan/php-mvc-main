@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Model\PostModel;
 use App\Model\UserModel;
+use App\Service\Form;
 use App\Weblitzer\Controller;
+use App\Service\Validation;
 
 /**
  *
@@ -23,20 +25,45 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function add()
+    {
+        //$this->dd('add');
+        $errors = [];
+
+        if (!empty($_POST['submitted'])) {
+          // $this->dd($_POST);
+            $postArticle=$this->cleanXss($_POST);
+          // $this->dd($postArticle);
+
+           $validerArticle= new Validation;
+
+
+           $errors['titre'] =$validerArticle->textValid($postArticle['titre'],'titre',5,100);
+           //$this->dbug($validerArticle);
+
+        }
+        
+        $formAdd = new Form($errors);
+        
+        $this->render('app.article.addarticle', [
+            'formAdd' => $formAdd,
+        ]);
+
+    }
     public function show($id)
     {
         $article = PostModel::findById($id);
         $user = new UserModel;
-      
+
         $this->render('app.article.show', [
             'article' => $article,
             'user' => $user
         ]);
     }
 
-    public function delete($id)
+    /* public function delete($id)
     {
-        PostModel::delete($id);
+        //PostModel::delete($id);
         $this->redirect('articles');
     }
 
@@ -65,9 +92,27 @@ class ArticleController extends Controller
 
     public function afficherPage404()
     {
-        header("HTTP/1.0 404 Not Found");
+       /* header("HTTP/1.0 404 Not Found");
         include('view.app.default.404');
-        exit;
+        exit;*/
+
+    public function delete($id)
+    {
+        $articleDelete = $this->isArticleExist($id);
+        PostModel::delete($id);
+        $this->redirect('articles');
+    }
+
+    public function isArticleExist($id)
+    {
+        $article = PostModel::findById($id);
+
+        // if (empty($article)):
+        //     $this->Abort404();
+        // endif;
+
+        // return $article;
+
+        return (empty($article)) ? $this->Abort404() : $article;
     }
 }
-

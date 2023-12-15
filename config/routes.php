@@ -7,8 +7,10 @@ $routes = [
     ['docphp', 'docphp', 'index'],
     ['articles', 'article', 'index'],
     ['users', 'user', 'index'],
+    ['add', 'article', 'add'],
     ['article', 'article', 'show', ['id']],
     ['delete', 'article', 'delete', ['id']],
+   
 
 ];
 

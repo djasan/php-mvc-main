@@ -8,6 +8,7 @@ use App\Service\Form;
 use App\Weblitzer\Controller;
 use App\Service\Validation;
 
+
 /**
  *
  */
@@ -41,7 +42,14 @@ class ArticleController extends Controller
            $errors['titre'] =$validerArticle->textValid($postArticle['titre'],'titre',5,100);
            //$this->dbug($validerArticle);
 
+           if ($validerArticle->IsValid($errors)) {
+            // Votre code à exécuter si la validation est réussie
+            PostModel::insert($postArticle);
+            }
+
         }
+
+
         
         $formAdd = new Form($errors);
         
@@ -50,6 +58,8 @@ class ArticleController extends Controller
         ]);
 
     }
+   
+
     public function show($id)
     {
         $article = PostModel::findById($id);

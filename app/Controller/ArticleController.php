@@ -57,7 +57,7 @@ class ArticleController extends Controller
     {
         // Logique pour vérifier si l'article avec l'ID donné existe
         // Retourne true si l'article existe, false sinon
-        // Vous devrez remplacer cette logique par votre propre vérification, par exemple, en interagissant avec une base de données
+        // remplacer cette logique par votre propre vérification, par exemple, en interagissant avec une base de données
         $article = PostModel::findById($id);
         $this->dd($article);
         return !empty($article); // On suppose que si $article n'est pas vide, l'article existe
